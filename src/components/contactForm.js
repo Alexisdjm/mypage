@@ -48,13 +48,13 @@ const Contact = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        let message = `You have received an email from a future client
+        let message = `You have received an email from a possible client
     - Name: ${formvalue.name}
     - Email: ${formvalue.email}
-    
+
     - Message: ${formvalue.body}`;
 
-    fetch(`${urlAPI}/api/contact`, {
+    fetch(`${urlAPI}/contact`, {
         method: 'POST',
         headers:{
             'Content-Type':'application/json',
@@ -72,7 +72,7 @@ const Contact = () => {
     formvalue.name = '';
     formvalue.email = '';
     formvalue.body = '';
-    
+
     setShow(true)
 
     setTimeout(() => {
