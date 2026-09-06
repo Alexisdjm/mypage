@@ -47,7 +47,7 @@ const images = {
     design1: require('./icons/casa.png'),
     design2: require('./icons/sushi.png'),
     design3: require('./icons/mypage.png'),
-
+    error: require('./icons/error-pc.gif'),
 
 }
 

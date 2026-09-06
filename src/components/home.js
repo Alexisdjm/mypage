@@ -8,6 +8,7 @@ import Contact from './contactForm';
 import Header from './header.js'
 import Footer from './footer.js'
 import Scrollbar from './scrollbar.js'
+import ScrollToTop from './ScrollToTopCTA.js'
 import { useEffect } from "react";
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
             <Technologies/>
             <Contact/>
             <Footer/>
+            <ScrollToTop/>
         </>
     )
 }

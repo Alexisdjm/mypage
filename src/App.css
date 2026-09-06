@@ -66,6 +66,10 @@ strong {
   text-align: center;
 }
 
+.gap-1 {
+  gap: 1em;
+}
+
 /* -----------------------------------------------------#1d1c24;--------------------------------------------------- */
 
 body {
@@ -696,13 +700,10 @@ input.submit:hover {
 }
 
 .blur-bg-modal {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 171px);
+  min-width: 342px;
   position: fixed;
-  background:rgba(15, 11, 23, .3);
-  backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
   z-index: 99;
@@ -712,15 +713,25 @@ input.submit:hover {
 }
 
 .modal-text {
+  margin: 0;
   font-size: 24px;
   color: var(--color-white);
-  margin: 0;
+  color: var(--general-bg-color);
+
 }
 
 .modal-icon {
   margin: 0 15px;
   width: 80px;
   height: 80px;
+}
+
+.modal-content {
+  background-color: rgb(243, 243, 243);
+  padding: 3em;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 5px 12px 2px rgba(0,0,0,0.28); 
+box-shadow: 1px 5px 12px 2px rgba(0,0,0,0.28);
 }
 
 .show-fade {
@@ -732,6 +743,41 @@ input.submit:hover {
 
 .react-parallax.section-container .react-parallax-content {
   min-width: 740px;
+}
+
+/* --------------------------------------------- Scroll to top CTA --------------------------------- */
+
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  
+  background-color: #fff;
+  color: var(--general-bg-color);
+  font-size: 20px;
+  font-weight: bold;
+  
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  
+  /* Animación sutil de hover y entrada */
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
 }
 
 /* --------------------------------------------- new site button ----------------------------------- */

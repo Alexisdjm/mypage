@@ -11,6 +11,7 @@ const Contact = () => {
 
     const [formvalue, setFormvalue] = useState({email:'', name:'', body: ''})
     const [show, setShow] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     const handleimput = (e) => {
         const {name, value} = e.target;
@@ -46,39 +47,83 @@ const Contact = () => {
         )
     }
 
+    // const handlesubmit = (e) => {
+    //     e.preventDefault();
+    //     let message = `You have received an email from a possible client
+    // - Name: ${formvalue.name}
+    // - Email: ${formvalue.email}
+
+    // - Message: ${formvalue.body}`;
+
+    // fetch(`${urlAPI}/contact`, {
+    //     method: 'POST',
+    //     headers:{
+    //         'Content-Type':'application/json',
+    //         "X-CSRFToken": getCookie("csrftoken"),
+    //     },
+    //     body: JSON.stringify({
+    //         message
+    //     })
+    // })
+    // .then(response => response.json())
+    // .then(result => {
+    //     console.log(result);
+    // });
+
+    // formvalue.name = '';
+    // formvalue.email = '';
+    // formvalue.body = '';
+
+    // setShow(true)
+
+    // setTimeout(() => {
+    //     setShow(false)
+    // }, 1500)
+    // }
+
     const handlesubmit = (e) => {
         e.preventDefault();
-        let message = `You have received an email from a possible client
-    - Name: ${formvalue.name}
-    - Email: ${formvalue.email}
 
-    - Message: ${formvalue.body}`;
+        const message = `You have received an email from a possible client
+        - Name: ${formvalue.name}
+        - Email: ${formvalue.email}
 
-    fetch(`${urlAPI}/contact`, {
-        method: 'POST',
-        headers:{
-            'Content-Type':'application/json',
-            "X-CSRFToken": getCookie("csrftoken"),
-        },
-        body: JSON.stringify({
-            message
+        - Message: ${formvalue.body}`;
+
+        fetch(`${urlAPI}/contact`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "X-CSRFToken": getCookie("csrftoken"),
+            },
+            body: JSON.stringify({ message })
         })
-    })
-    .then(response => response.json())
-    .then(result => {
-        console.log(result);
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log("Enviado con éxito:", result);
+            setSuccess(true);
+            
+            // Limpia el formulario solo si el envío fue exitoso
+            setFormvalue({ name: '', email: '', body: '' });
+        })
+        .catch(error => {
+            console.error("Error al enviar el formulario:", error);
+            setSuccess(false);
+        })
+        .finally(() => {
+            // Muestra el modal independientemente de si fue éxito o error
+            setShow(true);
 
-    formvalue.name = '';
-    formvalue.email = '';
-    formvalue.body = '';
-
-    setShow(true)
-
-    setTimeout(() => {
-        setShow(false)
-    }, 1500)
-    }
+            setTimeout(() => {
+                setShow(false);
+            }, 1500);
+        });
+    };
 
 
     return(
@@ -94,7 +139,7 @@ const Contact = () => {
                 </div>
                 <SubmitBtn tag={"submit"}/>
             </form>
-            <Modal open={show} content={'Mail successfully sent'}/>
+            <Modal open={show} sent={'Submission successful!'} notSent={'Submission failed.'} success={success}/>
             </Parallax>
         </div>
     )
