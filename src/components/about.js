@@ -19,7 +19,7 @@ const About = () => {
             <SEO {...SEO_PAGES.about} />
             <Scrollbar/>
             <Header/>
-            <First glitchtext='About Me' bool={false}  align='center'/>
+            <First glitchtext='About Alexis Jiménez' isHero={true} bool={false} align='center'/>
             <SocialMenu/>
             <Boxes/>
             <Footer/>

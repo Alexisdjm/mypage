@@ -19,7 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://alexiswebworks.com/",
+  "lang": "en",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

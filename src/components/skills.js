@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Skills = ({ref}) => {
 
-    const text = "Hello there! I'm Alexis Jiménez, an Electronics and Computer Engineer turned Full Stack Web Developer. With a strong foundation in both hardware and software, I bring a unique perspective to the world of web development. My expertise spans various frontend and backend technologies, allowing me to craft seamless and innovative digital experiences. Beyond the web, I also dabble in the realm of game development, adding a touch of creativity to my technical skill set. Explore my portfolio and let's embark on a journey of turning ideas into digital realities together!"
+    const text = "Hello there! I'm Alexis Jiménez (Alexis Jimenez), an Electronics and Computer Engineer turned Full Stack Web Developer based in Barquisimeto, Venezuela. With a strong foundation in both hardware and software, I bring a unique perspective to the world of web development. My expertise spans various frontend and backend technologies, allowing me to craft seamless and innovative digital experiences. Beyond the web, I also dabble in the realm of game development, adding a touch of creativity to my technical skill set. Explore my portfolio and let's embark on a journey of turning ideas into digital realities together!"
 
     const responsive = {
         superLargeDesktop: {
@@ -29,7 +29,7 @@ const Skills = ({ref}) => {
     return (
       <div ref={ref} id='skills' className='section-container flex-center'>
           <div className='content-card'>
-              <h4 className='skills-title'>What I Am Great At?</h4>
+              <h2 className='skills-title'>What I Am Great At?</h2>
               <div className='myself-text-container'>
                   <p className='page-content justify-center-text'>
                     {text}
@@ -38,19 +38,19 @@ const Skills = ({ref}) => {
               <div className='cien'>
                 <Carousel responsive={responsive} autoPlay={true} autoPlaySpeed={5000} ssr={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
                     <div className='minicard'>
-                      <img src={images.web} alt='web development' className='skills-img-dimensions'></img>
+                      <img src={images.web} alt='Web development icon' className='skills-img-dimensions' loading='lazy'></img>
                       <p className='skills-card-title'>Web Development</p>
                     </div>
                     <div className='minicard'>
-                      <img src={images.design} alt='web development' className='skills-img-dimensions'></img>
+                      <img src={images.design} alt='UX and UI design icon' className='skills-img-dimensions' loading='lazy'></img>
                       <p className='skills-card-title'>UX / UI Deisgn</p>
                     </div>
                     <div className='minicard'>
-                      <img src={images.backend} alt='web development' className='skills-img-dimensions'></img>
+                      <img src={images.backend} alt='Backend development icon' className='skills-img-dimensions' loading='lazy'></img>
                       <p className='skills-card-title'>Backend</p>
                     </div>
                     <div className='minicard'>
-                      <img src={images.shopify} alt='web development' className='skills-img-dimensions'></img>
+                      <img src={images.shopify} alt='Shopify development icon' className='skills-img-dimensions' loading='lazy'></img>
                       <p className='skills-card-title'>Shopify</p>
                     </div>
                 </Carousel>;

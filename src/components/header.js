@@ -46,7 +46,7 @@ function Header() {
             <div className={!header ? 'navbar-container flex-center': 'navbar-container flex-center navbar-scroll'}>
                 <div className="flex-navbar align-center">
                     <Link to='/' onClick={() => {ScrollToTop('/')}}>
-                        <img src={images.mylogowhite} className={!header ? 'mylogo' : 'mylogo img-smaller'} alt='mylogo'></img>
+                        <img src={images.mylogowhite} className={!header ? 'mylogo' : 'mylogo img-smaller'} alt='Alexis Jiménez logo'></img>
                     </Link>
                     <input onChange={() => {showhide(sidebar.current); setToggle(!toggle)}} id="toggleChecker" checked={toggle} type="checkbox"></input>
                     <label id="togglerLable" className="sidebar-btn" htmlFor="toggleChecker">
@@ -58,7 +58,7 @@ function Header() {
                     </label>
                     <div ref={sidebar} className='sidebar align-center flex-sidebar'>
                         <div className='header-content--box'>
-                            <img src={images.mylogo} className='footer-logo logo-sidebar-margin' alt='logo'></img>
+                            <img src={images.mylogo} className='footer-logo logo-sidebar-margin' alt='Alexis Jiménez logo'></img>
                             <div className='links-container-footer'>
                                 <div className='flex-link'>
                                     <Link to='/' className='link-footer' onClick={() => {ScrollToTop('/'); showhide(sidebar.current); setToggle(false)}}>Home</Link>
@@ -81,10 +81,10 @@ function Header() {
                             </div>
                             <div className='flex-social-horizontal'>
                                 <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href="https://wa.me/584245604821?text=Hi%20Alexis%20how%20are%20you?"><FaWhatsapp/></a>
-                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://instagram.com/alexisdjm__'><FaInstagram /></a>
-                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://github.com/Alexisdjm'><FaGithub/></a>
-                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://www.linkedin.com/in/alexis-jimenez-42083823a'><FaLinkedin/></a>
-                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://www.tiktok.com/@ad.codeverse'><FaTiktok/></a>
+                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://instagram.com/alexisdjm__' aria-label='Instagram profile of Alexis Jiménez'><FaInstagram /></a>
+                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://github.com/Alexisdjm' aria-label='GitHub profile of Alexis Jiménez'><FaGithub/></a>
+                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://www.linkedin.com/in/alexis-jimenez-42083823a' aria-label='LinkedIn profile of Alexis Jiménez'><FaLinkedin/></a>
+                                <a target="_blank" rel="noreferrer" className='link-sidebar-icon' href='https://www.tiktok.com/@alexisdjm__' aria-label='TikTok profile of Alexis Jiménez'><FaTiktok/></a>
                             </div>
                         </div>
                         <span onClick={() => {showhide(sidebar.current); setToggle(false)}}></span>

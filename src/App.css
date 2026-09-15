@@ -415,6 +415,43 @@ div.project-box:hover .project-name-container {
   position: absolute;
   bottom: -80px;
   text-align: center;
+  width: min(320px, 90%);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 11, 22, 0.92);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.project-box-image {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.project-description {
+  color: var(--color-white);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-link-secondary {
+  display: inline-block;
+  margin-top: 8px;
 }
 
 .project-name {

@@ -7,7 +7,6 @@ const Contact = () => {
 
     // let urlAPI = "https://api.alexiswebworks.com";
     let urlAPI = process.env.REACT_APP_API_URL;
-    console.log(urlAPI)
 
     const [formvalue, setFormvalue] = useState({email:'', name:'', body: ''})
     const [show, setShow] = useState(false)
@@ -128,8 +127,8 @@ const Contact = () => {
 
     return(
         <div id='contact' className='contact-form-container'>
-            <Parallax className='section-container flex-col align-center section-margin section-padding' blur={3} bgImage={images.background} bgImageAlt="the cat" strength={400}>
-            <h4 className='skills-title'>Contact me</h4>
+            <Parallax className='section-container flex-col align-center section-margin section-padding' blur={3} bgImage={images.background} bgImageAlt="Contact section background" strength={400}>
+            <h2 className='skills-title'>Contact Alexis Jiménez</h2>
             <form className='contact-form flex-col section-padding' onSubmit={handlesubmit}>
                 <input name='name' onChange={handleimput} value={formvalue.name} id='name' type='text' placeholder='Your name' className='contact-input' required></input>
                 <input name='email' onChange={handleimput}  value={formvalue.email}  id='email' type='email' placeholder='Your email' className='contact-input' required></input>

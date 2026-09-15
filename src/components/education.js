@@ -41,11 +41,11 @@ const Education = () => {
 
     return (
         <div className='education-container flex-col align-center'>
-            <h4 className='skills-title'>Education</h4>
+            <h2 className='skills-title'>Education</h2>
             <div id='education-boxes' className='flex-col space-between --gap'>
                 <div className='study-desktop-container'>
                     <div className='img-container-education'>
-                        <img className='education-img' src={images.uny} alt='engineer'></img>
+                        <img className='education-img' src={images.uny} alt='Electronic Engineering degree' loading='lazy'></img>
                     </div>
                     <div className='study-box'>
                         <div className='flex-col space-between'>
@@ -55,7 +55,7 @@ const Education = () => {
                 </div>
                 <div className='study-desktop-container'>
                     <div className='img-container-education'>
-                        <img className='education-img' src={images.cs50w} alt='web'></img>
+                        <img className='education-img' src={images.cs50w} alt='Harvard CS50 Web Programming certificate' loading='lazy'></img>
                     </div>
                     <div className='study-box'>
                         <div className='flex-col space-between'>
@@ -65,7 +65,7 @@ const Education = () => {
                 </div>
                 <div className='study-desktop-container'>
                     <div className='img-container-education'>
-                        <img className='education-img' src={images.unity} alt='games'></img>
+                        <img className='education-img' src={images.unity} alt='Unity game development course' loading='lazy'></img>
                     </div>
                     <div className='study-box'>
                         <div className='flex-col space-between'>
@@ -77,21 +77,21 @@ const Education = () => {
             <div id='education-mobile-slider' className='cien'>
                 <Carousel responsive={responsive} autoPlay={true} autoPlaySpeed={5000} ssr={true} draggable={true} infinite={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
                     <div className='study-box--mobile-container'>
-                        <img className='education-img' src={images.uny} alt='engineer'></img>
+                        <img className='education-img' src={images.uny} alt='Electronic Engineering degree' loading='lazy'></img>
                         <div className='study-box'>
-                            <Hover content={contents.engineering} title='Web Programming with Python and JavaScript'/>
+                            <Hover content={contents.engineering} title='Electronic Engineering'/>
                         </div>
                     </div>
                     <div className='study-box--mobile-container'>
-                        <img className='education-img' src={images.cs50w} alt='web'></img>
+                        <img className='education-img' src={images.cs50w} alt='Harvard CS50 Web Programming certificate' loading='lazy'></img>
                         <div className='study-box'>
                             <Hover content={contents.web} title='Web Programming with Python and JavaScript'/>
                         </div>
                     </div>
                     <div className='study-box--mobile-container'>
-                        <img className='education-img' src={images.unity} alt='games'></img>
+                        <img className='education-img' src={images.unity} alt='Unity game development course' loading='lazy'></img>
                         <div className='study-box'>
-                            <Hover content={contents.games} title='Web Programming with Python and JavaScript'/>
+                            <Hover content={contents.games} title='2D Videogames Development with C# and Unity'/>
                         </div>
                     </div>
                 </Carousel>

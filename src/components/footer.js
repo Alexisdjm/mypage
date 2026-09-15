@@ -22,7 +22,7 @@ const Footer = () => {
 
     return(
         <div className='flex-col align-center footer-margin footer-bg'>
-            <img src={images.mylogo} className='footer-logo' alt='mylogo'></img>
+            <img src={images.mylogo} className='footer-logo' alt='Alexis Jiménez logo' loading='lazy'></img>
             <div className='links-container-footer'>
                 <div className='flex-link'>
                     <Link to='/' className='link-footer' onClick={() => {ScrollToTop('/')}}>Home</Link>
@@ -44,8 +44,9 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex-col align-center last-gap'>
-                <h4 className='last-text'>Alexis.jm29@gmail.com</h4>
-                <h4 className='last-text'>© Copyright. All rights reserved</h4>
+                <p className='last-text'>Alexis Jiménez — Full Stack Web Developer</p>
+                <p className='last-text'><a className='link-footer' href='mailto:Alexis.jm29@gmail.com'>Alexis.jm29@gmail.com</a></p>
+                <p className='last-text'>© {new Date().getFullYear()} Alexis Jiménez. All rights reserved.</p>
             </div>
         </div>
     )

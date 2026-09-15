@@ -1,103 +1,124 @@
 import images from '../images/exporting.js';
 import { useState } from 'react';
+import { SOCIAL_PROFILES } from '../config/seo';
+
+const PROJECTS = [
+    {
+        id: 'condiments',
+        name: 'La Casa de los Condimentos',
+        tech: 'Django REST Framework and React.js',
+        image: images.condimentos,
+        imageAlt: 'La Casa de los Condimentos marketplace project by Alexis Jiménez',
+        description: 'E-commerce marketplace built by Alexis Jiménez with React.js and Django REST Framework. A curated online store for premium condiments, nuts, spices, and baking essentials based in Barquisimeto, Venezuela.',
+        repoUrl: SOCIAL_PROFILES.github,
+    },
+    {
+        id: 'swiss',
+        name: 'SwissGetal',
+        tech: '(Shopify theme)',
+        image: images.swissgetal,
+        imageAlt: 'SwissGetal Shopify theme project by Alexis Jiménez',
+        description: 'Shopify theme developed by Alexis Jiménez for SwissGetal, a beauty supply store in Switzerland. Built with Liquid, custom metadata, and JavaScript for the storefront UI.',
+        repoUrl: SOCIAL_PROFILES.github,
+    },
+    {
+        id: 'ecommerce',
+        name: 'Ecommerce Site',
+        tech: '(Django, HTML, CSS and JavaScript)',
+        image: images.ecommerce,
+        imageAlt: 'Ecommerce site project by Alexis Jiménez',
+        description: 'Full e-commerce website by Alexis Jiménez using Python and Django with an ORM database, server-side logic, and rendered HTML templates.',
+        repoUrl: SOCIAL_PROFILES.github,
+    },
+    {
+        id: 'mail',
+        name: 'Mail Web App',
+        tech: '(Django, HTML, CSS and JavaScript)',
+        image: images.mail,
+        imageAlt: 'Mail web application project by Alexis Jiménez',
+        description: 'Web application by Alexis Jiménez that lets registered users send and receive emails through API calls to a Django backend.',
+        repoUrl: SOCIAL_PROFILES.github,
+    },
+    {
+        id: 'social',
+        name: 'Social Media Web App',
+        tech: '(Django, REST API, JavaScript)',
+        image: images.faketwitter,
+        imageAlt: 'Social media web app project by Alexis Jiménez',
+        description: 'Social network-style web app by Alexis Jiménez built with Django REST API and JavaScript for user interactions and content sharing.',
+        repoUrl: SOCIAL_PROFILES.github,
+    },
+    {
+        id: 'chat',
+        name: 'Real Time Chat App',
+        tech: '(Django Channels, REST API, WebSocket)',
+        image: images.fakewhatsapp,
+        imageAlt: 'Real-time chat application project by Alexis Jiménez',
+        description: 'Real-time chat application by Alexis Jiménez using Django Channels and WebSockets. Users can update profiles, manage contacts, and send instant messages.',
+        repoUrl: SOCIAL_PROFILES.github,
+    },
+];
 
 const Projects = ({ref}) => {
-    const [condiments, setCondiments] = useState(false)
-    const [swiss, setSwiss] = useState(false)
-    const [ecommerce, setEcommerce] = useState(false)
-    const [mail, setMail] = useState(false)
-    const [whatsapp, setWhatsapp] = useState(false)
+    const [expandedMobile, setExpandedMobile] = useState({});
 
-    const descriptions = {
-        condiments: 'Immerse yourself in a culinary experience with our meticulously designed online marketplace, seamlessly built with React.js and Django Rest Framework. Based in Barquisimeto, Venezuela, we take pride in curating a diverse collection of premium condiments, nuts, spices, and baking essentials. Our platform is a testament to the synergy of cutting-edge technology and gastronomic excellence, promising a delightful journey for home cooks and seasoned chefs alike. Elevate your dishes with the finest ingredients, thoughtfully sourced to your doorstep—welcome to a world where technology meets gourmet indulgence.',
-        swiss: 'This is a shopify theme for swissgetall store, which is a beauty supply store in switzerland. It was developed in shopify and liquid, in addition, it uses metadata to specify each product and uses javascrip code to create the user interface.',
-        ecommerce: 'This project consists of creating an e-commerce website using python and the django framework. For the storage of product data, an ORM model database was used, in addition, python was used to create the functionality of the page and the rendering of the html templates.',
-        mail: "The objective of this project was to create a web application that allows the user to send emails to other users who are registered in the application's database. This is a front end web application that makes api calls to send and receive emails.",
-        whatsapp: 'This project is about of create a real-time chat application, which allows a user registered in the application to send and receive messages instantly. To achieve this goal, websocket technology and the django channels package were used. This application allows each user to update their profile photo, their status message, start a chat with any of their contacts, send and receive messages.',
-    }
+    const toggleMobile = (id) => {
+        setExpandedMobile((prev) => ({ ...prev, [id]: !prev[id] }));
+    };
 
     return (
         <div ref={ref} id='projects' className='projects-container'>
-            <h4 className='skills-title'>Projects</h4>
-            <section id='projects-container' className='project-gallery'>
-                <div className='flex-center project-box' style={{backgroundImage: `url(${images.condimentos})`}}>
-                    <div className='project-name-container'>
-                        <h6 className='project-name'>La Casa de los Condimentos</h6>
-                        <p className='identifier'>Django rest Framework and React.js</p>
-                    </div>
-                </div>
-                <div className='flex-center project-box' style={{backgroundImage: `url(${images.swissgetal})`}}>  
-                    <div className='project-name-container'>
-                        <h6 className='project-name'>SwissGetal</h6>
-                        <p className='identifier'>(Shopify theme)</p>
-                    </div>
-                </div>
-                <div className='flex-center project-box' style={{backgroundImage: `url(${images.ecommerce})`}}>   
-                    <div className='project-name-container'>
-                        <h6 className='project-name'>Ecommerce Site</h6>
-                        <p className='identifier'>(django, Html, CSS and Javacript)</p>
-                    </div>
-                </div>
-                <div className='flex-center project-box' style={{backgroundImage: `url(${images.mail})`}}>  
-                    <div className='project-name-container'>
-                        <h6 className='project-name'>Mail Web App</h6>
-                        <p className='identifier'>(django, Html, CSS and Javacript)</p>
-                    </div>
-                </div>
-                <div className='flex-center project-box' style={{backgroundImage: `url(${images.faketwitter})`}}>
-                    <div className='project-name-container'>
-                        <h6 className='project-name'>Social media Web App</h6>
-                        <p className='identifier'>(Django, rest api, Javascript)</p>
-                    </div>
-                </div>
-                <div className='flex-center project-box' style={{backgroundImage: `url(${images.fakewhatsapp})`}}>
-                    <div className='project-name-container'>
-                        <h6 className='project-name'>Real Time Chat App</h6>
-                        <p className='identifier'>(Django Channels, rest api, Websocket)</p>
-                    </div>
-                </div>
+            <h2 className='skills-title'>Projects by Alexis Jiménez</h2>
+            <section id='projects-container' className='project-gallery' aria-label='Portfolio projects'>
+                {PROJECTS.map((project) => (
+                    <article
+                        key={project.id}
+                        className='flex-center project-box project-box--interactive'
+                        style={{backgroundImage: `url(${project.image})`}}
+                        aria-label={project.name}
+                    >
+                        <img src={project.image} alt={project.imageAlt} className='project-box-image' loading='lazy' />
+                        <div className='project-name-container'>
+                            <h3 className='project-name'>{project.name}</h3>
+                            <p className='identifier'>{project.tech}</p>
+                            <p className='project-description page-content'>{project.description}</p>
+                            <div className='project-links'>
+                                <a
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    className='mobile-project-link'
+                                    href={project.repoUrl}
+                                >
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
             </section>
             <div className='flex-col align-center mobile-projects-container'>
-                <div className='mobile-projects-view'>
-                    <div className='mobile-project-box' style={{backgroundImage: `url(${images.condimentos})`}}></div>
-                    <div className='mobile-project-info'>
-                        <h6 className='project-name'>La Casa de los Condimentos</h6>
-                        <p className={!condiments ? 'page-content p-hidden' : 'page-content p-hidden grow'}>{descriptions.condiments} </p>
-                        <button onClick={() => {setCondiments((condiments) => !condiments)}} className='mobile-project-link'>{!condiments ? 'Show more': 'Show less'}</button>
+                {PROJECTS.map((project) => (
+                    <div key={project.id} className='mobile-projects-view'>
+                        <div className='mobile-project-box' style={{backgroundImage: `url(${project.image})`}} role='img' aria-label={project.imageAlt}></div>
+                        <div className='mobile-project-info'>
+                            <h3 className='project-name'>{project.name}</h3>
+                            <p className={!expandedMobile[project.id] ? 'page-content p-hidden' : 'page-content p-hidden grow'}>
+                                {project.description}
+                            </p>
+                            <button onClick={() => toggleMobile(project.id)} className='mobile-project-link'>
+                                {!expandedMobile[project.id] ? 'Show more' : 'Show less'}
+                            </button>
+                            <a
+                                target='_blank'
+                                rel='noreferrer'
+                                className='mobile-project-link project-link-secondary'
+                                href={project.repoUrl}
+                            >
+                                View on GitHub
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div className='mobile-projects-view'>
-                    <div className='mobile-project-box' style={{backgroundImage: `url(${images.swissgetal})`}}></div>
-                    <div className='mobile-project-info'>
-                        <h6 className='project-name'>SwissGetal</h6>
-                        <p className={!swiss ? 'page-content p-hidden' : 'page-content p-hidden grow'}>{descriptions.swiss}</p>
-                        <button onClick={() => {setSwiss((swiss) => !swiss)}} className='mobile-project-link'>{!swiss ? 'Show more': 'Show less'}</button>
-                    </div>
-                </div>
-                <div className='mobile-projects-view'>
-                    <div className='mobile-project-box' style={{backgroundImage: `url(${images.ecommerce})`}}></div>
-                    <div className='mobile-project-info'>
-                        <h6 className='project-name'>Ecommerce Site</h6>
-                        <p className={!ecommerce ? 'page-content p-hidden' : 'page-content p-hidden grow'}>{descriptions.ecommerce}</p>
-                        <button onClick={() => {setEcommerce((ecommerce) => !ecommerce)}} className='mobile-project-link'>{!ecommerce ? 'Show more': 'Show less'}</button>
-                    </div>
-                </div>
-                <div className='mobile-projects-view'>
-                    <div className='mobile-project-box' style={{backgroundImage: `url(${images.mail})`}}></div>
-                    <div className='mobile-project-info'>
-                        <h6 className='project-name'>Mail Web App</h6>
-                        <p className={!mail ? 'page-content p-hidden' : 'page-content p-hidden grow'}>{descriptions.mail}</p>
-                        <button onClick={() => {setMail((mail) => !mail)}} className='mobile-project-link'>{!mail ? 'Show more': 'Show less'}</button>
-                    </div>
-                </div>
-                <div className='mobile-projects-view'>
-                    <div className='mobile-project-box' style={{backgroundImage: `url(${images.fakewhatsapp})`}}></div>
-                    <div className='mobile-project-info'>
-                        <h6 className='project-name'>Real Time Chat App</h6>
-                        <p className={!whatsapp ? 'page-content p-hidden' : 'page-content p-hidden grow'}>{descriptions.whatsapp}</p>
-                        <button onClick={() => {setWhatsapp((whatsapp) => !whatsapp)}} className='mobile-project-link'>{!whatsapp ? 'Show more': 'Show less'}</button>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     )

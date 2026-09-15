@@ -9,7 +9,9 @@ WORKDIR /app
 COPY --from=dev-deps /app/node_modules ./node_modules
 COPY . .
 ARG REACT_APP_API_URL
+ARG REACT_APP_SITE_URL=https://alexiswebworks.com
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
+ENV REACT_APP_SITE_URL=$REACT_APP_SITE_URL
 
 RUN npm run build
 

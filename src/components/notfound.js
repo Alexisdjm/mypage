@@ -7,17 +7,37 @@ const Error404 = () => {
     const vantaRef = useRef(null);
 
   useEffect(() => {
-    const VANTA = window.VANTA;
-    const effect = VANTA.WAVES({
-      el: vantaRef.current,
-      color: 0x0e0b16,
-      shininess: 30,
-      waveHeight: 20,
-      waveSpeed: 0.5,
-      zoom: 0.75,
-    });
+    if (navigator.userAgent === "ReactSnap") {
+      return undefined;
+    }
 
-    return () => effect.destroy(); 
+    let effect;
+
+    const loadBackground = async () => {
+      const THREE = await import("three");
+      window.THREE = THREE;
+      const VANTA = (await import("vanta/dist/vanta.waves.min")).default;
+
+      if (vantaRef.current) {
+        effect = VANTA({
+          el: vantaRef.current,
+          THREE,
+          color: 0x0e0b16,
+          shininess: 30,
+          waveHeight: 20,
+          waveSpeed: 0.5,
+          zoom: 0.75,
+        });
+      }
+    };
+
+    loadBackground();
+
+    return () => {
+      if (effect) {
+        effect.destroy();
+      }
+    };
   }, []);
 
   return (
@@ -26,7 +46,7 @@ const Error404 = () => {
     <div ref={vantaRef} className="not-found--bg">
         <div className="container-404"> 
             <h2 className="title-404--not-found">404</h2>
-            <h4 className="text-404--not-found">It seems you got a little bit lost :(</h4>
+            <p className="text-404--not-found">It seems you got a little bit lost :(</p>
             <a className="back-to--home" href="/">
                 <Fingerprint color="#fff" stroke="1" width='50px' height="50px"/>
                 Go back to homepage
