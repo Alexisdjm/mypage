@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Alexis Jiménez",
+  "name": "Alexis Jiménez — Full Stack Web Developer",
+  "description": "Portfolio of Alexis Jiménez, Full Stack Web Developer and Electronic Engineer.",
   "icons": [
     {
       "src": "favicon.ico",

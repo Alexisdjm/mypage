@@ -1,6 +1,8 @@
 import Header from "./header.js"
 import Footer from "./footer.js"
 import First from "./introduction.js"
+import SEO from "./SEO.js"
+import { SEO_PAGES } from "../config/seo"
 import Boxes from "./aboutBoxes.js"
 import SocialMenu from "./socialmedia.js"
 import Scrollbar from './scrollbar.js'
@@ -14,9 +16,10 @@ const About = () => {
 
     return(
         <>
+            <SEO {...SEO_PAGES.about} />
             <Scrollbar/>
             <Header/>
-            <First glitchtext='About Me' bool={false} align='center'/>
+            <First glitchtext='About Me' bool={false}  align='center'/>
             <SocialMenu/>
             <Boxes/>
             <Footer/>

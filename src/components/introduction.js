@@ -1,9 +1,10 @@
 import Typewriter from "typewriter-effect";
 import { useState } from "react";
 
-function First_look({glitchtext, bool, first, second, third, loop, align}) {
+function First_look({glitchtext, bool, first, second, third, loop, align, isHero = false}) {
 
     const [animationSpeed, setAnimationSpeed] = useState(5);
+    const HeadingTag = isHero ? 'h1' : 'h2';
 
     const handleMouseDown = () => {
       setAnimationSpeed(2.5);
@@ -21,7 +22,7 @@ function First_look({glitchtext, bool, first, second, third, loop, align}) {
     onMouseUp={handleMouseUp}
     style={{animationDuration: `${animationSpeed}s`, justifyContent: align}}>
         <div className="glitch-container">
-            <div className="glitch" data-glitch={glitchtext}>{glitchtext}</div>
+            <HeadingTag className="glitch" data-glitch={glitchtext}>{glitchtext}</HeadingTag>
             <div className='my-title'>
             {bool && 
                 <Typewriter options={{loop:loop}} onInit={(typewriter)=> {

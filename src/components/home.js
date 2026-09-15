@@ -1,5 +1,7 @@
 import First from './introduction.js';
+import SEO from './SEO.js';
 import SocialMenu from './socialmedia.js';
+import { SEO_PAGES } from '../config/seo';
 import Skills from "./skills.js";
 import Projects from "./projects.js";
 import Education from "./education.js";
@@ -19,9 +21,11 @@ const Home = () => {
 
     return(
         <>
+            <SEO {...SEO_PAGES.home} />
             <Scrollbar/>
             <Header/>
             <First 
+                isHero={true}
                 loop={true} 
                 bool={true} 
                 glitchtext='Alexis Jiménez' 
