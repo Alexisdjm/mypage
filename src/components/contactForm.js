@@ -129,13 +129,13 @@ const Contact = () => {
         <div id='contact' className='contact-form-container'>
             <Parallax className='section-container flex-col align-center section-margin section-padding' blur={3} bgImage={images.background} bgImageAlt="Contact section background" strength={400}>
             <h2 className='skills-title'>Contact Alexis Jiménez</h2>
-            <form className='contact-form flex-col section-padding' onSubmit={handlesubmit}>
-                <input name='name' onChange={handleimput} value={formvalue.name} id='name' type='text' placeholder='Your name' className='contact-input' required></input>
-                <input name='email' onChange={handleimput}  value={formvalue.email}  id='email' type='email' placeholder='Your email' className='contact-input' required></input>
-                <div className='flex-col'>
-                    <label className='message-label'>Your message</label>
-                    <textarea id='body' name='body' onChange={handleimput}  value={formvalue.body} className='message' required></textarea>
-                </div>
+            <form className='contact-form flex-col section-padding' onSubmit={handlesubmit} aria-label='Contact Alexis Jiménez'>
+                <label htmlFor='name' className='message-label'>Your name</label>
+                <input name='name' onChange={handleimput} value={formvalue.name} id='name' type='text' placeholder='Your name' className='contact-input' autoComplete='name' required />
+                <label htmlFor='email' className='message-label'>Your email</label>
+                <input name='email' onChange={handleimput} value={formvalue.email} id='email' type='email' placeholder='Your email' className='contact-input' autoComplete='email' required />
+                <label htmlFor='body' className='message-label'>Your message</label>
+                <textarea id='body' name='body' onChange={handleimput} value={formvalue.body} className='message' placeholder='Your message' autoComplete='off' required />
                 <SubmitBtn tag={"submit"}/>
             </form>
             <Modal open={show} sent={'Submission successful!'} notSent={'Submission failed.'} success={success}/>
