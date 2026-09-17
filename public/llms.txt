@@ -1,0 +1,27 @@
+# Alexis Jiménez — Full Stack Web Developer
+
+> Portfolio of Alexis Jiménez (Alexis Jimenez), Electronic Engineer and Full Stack Web Developer based in Barquisimeto, Venezuela. Specialized in React, Python, Django, Shopify themes, and UI/UX design.
+
+## Pages
+
+- [Home](https://alexiswebworks.com/): Portfolio overview, skills, projects, and contact
+- [About Me](https://alexiswebworks.com/about): Background, experience, and career goals
+
+## Contact
+
+- [Email Alexis Jiménez](mailto:Alexis.jm29@gmail.com)
+- [GitHub — Alexisdjm](https://github.com/Alexisdjm)
+- [LinkedIn — Alexis Jiménez](https://www.linkedin.com/in/alexis-jimenez-42083823a)
+- [Instagram — @alexisdjm__](https://instagram.com/alexisdjm__)
+
+## Expertise
+
+- Frontend: React, JavaScript, HTML, CSS, Tailwind, Bootstrap
+- Backend: Python, Django, PostgreSQL
+- E-commerce: Shopify themes and Liquid
+- Other: SEO, Unity game development
+
+## Optional
+
+- [Sitemap](https://alexiswebworks.com/sitemap.xml)
+- [Robots.txt](https://alexiswebworks.com/robots.txt)

@@ -5,7 +5,7 @@ const root = path.join(__dirname, '..');
 const publicDir = path.join(root, 'public');
 const buildDir = path.join(root, 'build');
 
-const seoAssets = ['sitemap.xml', 'robots.txt', 'og-image.svg'];
+const seoAssets = ['sitemap.xml', 'robots.txt', 'og-image.svg', 'llms.txt'];
 
 if (!fs.existsSync(buildDir)) {
   console.error('ensure-seo-assets: build/ folder not found. Run react-scripts build first.');

@@ -3,3 +3,6 @@ User-agent: *
 Disallow:
 
 Sitemap: https://alexiswebworks.com/sitemap.xml
+
+# LLM / AI crawlers
+# llms.txt: https://alexiswebworks.com/llms.txt
