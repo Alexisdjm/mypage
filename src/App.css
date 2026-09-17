@@ -1204,6 +1204,7 @@ div.show-sidebar {
   justify-content: center;
   position: relative;
   align-items: center;
+  background-color: #0e0b16;
 }
 
 .title-404--not-found {

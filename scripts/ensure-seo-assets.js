@@ -24,3 +24,12 @@ seoAssets.forEach((file) => {
   fs.copyFileSync(source, target);
   console.log(`ensure-seo-assets: copied ${file} -> build/${file}`);
 });
+
+// Use the SPA shell for 404.html so hosts that serve it still boot React Router.
+const indexHtml = path.join(buildDir, 'index.html');
+const fallback404Html = path.join(buildDir, '404.html');
+
+if (fs.existsSync(indexHtml)) {
+  fs.copyFileSync(indexHtml, fallback404Html);
+  console.log('ensure-seo-assets: synced 404.html from index.html');
+}

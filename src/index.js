@@ -10,7 +10,12 @@ const app = (
   </React.StrictMode>
 );
 
-if (container.hasChildNodes()) {
+const prerenderedRoutes = ['/', '/about'];
+const shouldHydrate =
+  container.hasChildNodes() &&
+  prerenderedRoutes.includes(window.location.pathname);
+
+if (shouldHydrate) {
   hydrateRoot(container, app);
 } else {
   createRoot(container).render(app);
